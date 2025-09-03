@@ -1,0 +1,489 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>时尚换装应用</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+            width: 1080px;
+            margin: 0 auto;
+            min-height: 100vh;
+            position: relative;
+            padding-bottom: 120px;
+        }
+        
+        /* 固定标题栏样式 */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 1080px;
+            height: 130px;
+            background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 0 0 20px 20px;
+        }
+        
+        .title-img {
+            width: 1080px;
+            height: 130px;
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+/*background: url('images/标题.png') no-repeat center center; /* 移除 cover */
+  background-size: contain; /* 关键：等比缩放并完整显示 */8/
+            border-radius: 16px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 42px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* 主内容区样式 */
+        .main-content {
+            margin-top: 150px; /* 为固定标题留出空间 */
+            padding: 0 20px;
+        }
+        
+        /* 菜单网格布局 */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            padding: 20px 0;
+        }
+        
+        .menu-item {
+            background: white;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 120px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .menu-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .menu-link {
+            display: block;
+            text-decoration: none;
+            flex-grow: 1;
+            position: relative;
+        }
+        
+        .menu-img {
+            width: 100%;
+            height: 90px;
+            background: #e0e7ff;
+            border-radius: 16px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #4f46e5;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .menu-title {
+            text-align: center;
+            padding: 12px 0;
+            color: #334155;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        /* 底部版权信息 */
+        .footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .copyright-img {
+            width: 500px;
+            height: 70px;
+            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 18px;
+            box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* 响应式调整 */
+        @media (max-width: 1080px) {
+            body {
+                width: 100%;
+            }
+            .header {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 固定标题栏 -->
+    <header class="header">
+        <div class="title-img">西游变装交互设计</div>
+    </header>
+    
+    <!-- 主内容区 -->
+    <div class="main-content">
+        <div class="menu-grid">
+            <!-- 生成24个菜单项 -->
+            <div class="menu-item">
+                <a href="作品/干皓桉_黑熊精/换装.html" class="menu-link">
+                    <div class="menu-img"><img src="images/干皓桉_黑熊精.png" alt=></div>
+                    <div class="menu-title">干皓桉《黑熊精》</div>
+                </a>
+            </div>
+            <div class="menu-item">
+                <a href="作品/干皓桉_猴王/换装.html" class="menu-link">
+                    <div class="menu-img"><img src="images/干皓桉_猴王.png" alt=></div>
+                    <div class="menu-title">干皓桉《猴王》</div>
+                </a>
+            </div>
+            <div class="menu-item">
+                <a href="作品/干皓桉_龙王/换装.html" class="menu-link">
+                    <div class="menu-img"><img src="images/干皓桉_龙王.png" alt=></div>
+                    <div class="menu-title">干皓桉《龙王》</div>
+                </a>
+            </div>
+            <div class="menu-item">
+                <a href="作品/干皓桉_铁扇公主/换装.html" class="menu-link">
+                    <div class="menu-img"><img src="images/干皓桉_铁扇公主.png" alt=></div>
+                    <div class="menu-title">干皓桉《铁扇公主》</div>
+                </a>
+            </div>
+            <div class="menu-item">
+                <a href="作品/干皓桉_仙女/换装.html" class="menu-link">
+                    <div class="menu-img"><img src="images/干皓桉_仙女.png" alt=></div>
+                    <div class="menu-title">干皓桉《仙女》</div>
+                </a>
+            </div>
+            <div class="menu-item">
+                <a href="作品/侯清菡_观音/换装.html" class="menu-link">
+                    <div class="menu-img"><img src="images/侯清菡_观音.png" alt=></div>
+                    <div class="menu-title">侯清菡《观音》</div>
+                </a>
+            </div>
+            <div class="menu-item">
+                <a href="作品/侯清菡_猴王/换装.html" class="menu-link">
+                    <div class="menu-img"><img src="images/侯清菡_猴王.png" alt=></div>
+                    <div class="menu-title">侯清菡《猴王》</div>
+                </a>
+            </div>
+            <div class="menu-item">
+                <a href="作品/侯清菡_龙王/换装.html" class="menu-link">
+                    <div class="menu-img"><img src="images/侯清菡_龙王.png" alt=></div>
+                    <div class="menu-title">侯清菡《龙王》</div>
+                </a>
+            </div>
+            <div class="menu-item">
+                <a href="作品/侯清菡_铁扇公主/换装.html" class="menu-link">
+                    <div class="menu-img"><img src="images/侯清菡_铁扇公主.png" alt=></div>
+                    <div class="menu-title">侯清菡《铁扇公主》</div>
+                </a>
+            </div>
+            <div class="menu-item">
+                <a href="作品/侯清菡_仙女/换装.html" class="menu-link">
+                    <div class="menu-img"><img src="images/侯清菡_仙女.png" alt=></div>
+                    <div class="menu-title">侯清菡《仙女》</div>
+                </a>
+            </div>
+            <div class="menu-item">
+                <a href="作品/梁轶琛_二郎神/换装.html" class="menu-link">
+                    <div class="menu-img"><img src="images/梁轶琛_二郎神.png" alt=></div>
+                    <div class="menu-title">梁轶琛《二郎神》</div>
+                </a>
+            </div>
+
+ <div class="menu-item">
+                <a href="作品/梁轶琛_龟丞相/换装.html" class="menu-link">
+                    <div class="menu-img"><img src="images/梁轶琛_龟丞相.png" alt=></div>
+                    <div class="menu-title">梁轶琛《龟丞相》</div>
+                </a>
+            </div>
+
+<div class="menu-item">
+                <a href="作品/梁轶琛_唐僧/换装.html" class="menu-link">
+                    <div class="menu-img"><img src="images/梁轶琛_唐僧.png" alt=></div>
+                    <div class="menu-title">梁轶琛《唐僧》</div>
+                </a>
+            </div>
+
+            <div class="menu-item">
+                <a href="作品/沈霖轩_猴王/换装.html" class="menu-link">
+                    <div class="menu-img"><img src="images/沈霖轩_猴王.png" alt=></div>
+                    <div class="menu-title">沈霖轩《猴王》</div>
+                </a>
+            </div>
+            <div class="menu-item">
+                <a href="作品/沈霖轩_龙王/换装.html" class="menu-link">
+                    <div class="menu-img"><img src="images/沈霖轩_龙王.png" alt=></div>
+                    <div class="menu-title">沈霖轩《龙王》</div>
+                </a>
+            </div>
+    <div class="menu-item">
+                <a href="作品/沈霖轩_黑熊精/换装.html" class="menu-link">
+                    <div class="menu-img"><img src="images/沈霖轩_黑熊精.png" alt=></div>
+                    <div class="menu-title">沈霖轩《黑熊精》</div>
+                </a>
+            </div>
+
+<div class="menu-item">
+                <a href="作品/沈霖轩_牛魔王/换装.html" class="menu-link">
+                    <div class="menu-img"><img src="images/沈霖轩_牛魔王.png" alt=></div>
+                    <div class="menu-title">沈霖轩《牛魔王》</div>
+                </a>
+            </div>
+
+<div class="menu-item">
+                <a href="作品/沈霖轩_猪八戒/换装.html" class="menu-link">
+                    <div class="menu-img"><img src="images/沈霖轩_猪八戒.png" alt=></div>
+                    <div class="menu-title">沈霖轩《猪八戒》</div>
+                </a>
+            </div>
+
+
+
+<div class="menu-item">
+                <a href="作品/程雨_银角大王/换装.html" class="menu-link">
+                    <div class="menu-img"><img src="images/程雨_银角大王.png" alt=></div>
+                    <div class="menu-title">程雨《银角大王》</div>
+                </a>
+            </div>
+
+
+<div class="menu-item">
+                <a href="作品/陈莘元_猴王/换装.html" class="menu-link">
+                    <div class="menu-img"><img src="images/陈莘元_猴王.png" alt=></div>
+                    <div class="menu-title">陈莘元《猴王》</div>
+                </a>
+            </div>
+
+<div class="menu-item">
+                <a href="作品/陈莘元_龙王/换装.html" class="menu-link">
+                    <div class="menu-img"><img src="images/陈莘元_龙王.png" alt=></div>
+                    <div class="menu-title">陈莘元《龙王》</div>
+                </a>
+            </div>
+
+<div class="menu-item">
+                <a href="作品/陈莘元_铁扇/换装.html" class="menu-link">
+                    <div class="menu-img"><img src="images/陈莘元_铁扇.png" alt=></div>
+                    <div class="menu-title">陈莘元《铁扇》</div>
+                </a>
+            </div>
+
+<div class="menu-item">
+                <a href="作品/陈莘元_仙女/换装.html" class="menu-link">
+                    <div class="menu-img"><img src="images/陈莘元_仙女.png" alt=></div>
+                    <div class="menu-title">陈莘元《仙女》</div>
+                </a>
+            </div>
+
+<div class="menu-item">
+                <a href="作品/李明轩_猴王/换装.html" class="menu-link">
+                    <div class="menu-img"><img src="images/李明轩_猴王.png" alt=></div>
+                    <div class="menu-title">李明轩《猴王》</div>
+                </a>
+            </div>
+
+<div class="menu-item">
+                <a href="作品/李明轩_龙王/换装.html" class="menu-link">
+                    <div class="menu-img"><img src="images/李明轩_龙王.png" alt=></div>
+                    <div class="menu-title">李明轩《龙王》</div>
+                </a>
+            </div>
+
+<div class="menu-item">
+                <a href="作品/李明轩_唐僧/换装.html" class="menu-link">
+                    <div class="menu-img"><img src="images/李明轩_唐僧.png" alt=></div>
+                    <div class="menu-title">李明轩《唐僧》</div>
+                </a>
+            </div>
+
+<div class="menu-item">
+                <a href="作品/李明轩_猪八戒/换装.html" class="menu-link">
+                    <div class="menu-img"><img src="images/李明轩_猪八戒.png" alt=></div>
+                    <div class="menu-title">李明轩《猪八戒》</div>
+                </a>
+            </div>
+
+<div class="menu-item">
+                <a href="作品/李晴萱_猴王/换装.html" class="menu-link">
+                    <div class="menu-img"><img src="images/李晴萱_猴王.png" alt=></div>
+                    <div class="menu-title">李晴萱《猴王》</div>
+                </a>
+            </div>
+
+<div class="menu-item">
+                <a href="作品/李晴萱_龙王/换装.html" class="menu-link">
+                    <div class="menu-img"><img src="images/李晴萱_龙王.png" alt=></div>
+                    <div class="menu-title">李晴萱《龙王》</div>
+                </a>
+            </div>
+
+<div class="menu-item">
+                <a href="作品/李晴萱_仙女/换装.html" class="menu-link">
+                    <div class="menu-img"><img src="images/李晴萱_仙女.png" alt=></div>
+                    <div class="menu-title">李晴萱《仙女》</div>
+                </a>
+            </div>
+
+<div class="menu-item">
+                <a href="作品/李晴萱_猪八戒/换装.html" class="menu-link">
+                    <div class="menu-img"><img src="images/李晴萱_猪八戒.png" alt=></div>
+                    <div class="menu-title">李晴萱《猪八戒》</div>
+                </a>
+            </div>
+
+
+
+
+<div class="menu-item">
+                <a href="作品/王芮_白骨精/换装.html" class="menu-link">
+                    <div class="menu-img"><img src="images/王芮_白骨精.png" alt=></div>
+                    <div class="menu-title">王芮《白骨精》</div>
+                </a>
+            </div>
+
+<div class="menu-item">
+                <a href="作品/王芮_猴王/换装.html" class="menu-link">
+                    <div class="menu-img"><img src="images/王芮_猴王.png" alt=></div>
+                    <div class="menu-title">王芮《猴王》</div>
+                </a>
+            </div>
+
+
+<div class="menu-item">
+                <a href="作品/王芮_龙王/换装.html" class="menu-link">
+                    <div class="menu-img"><img src="images/王芮_龙王.png" alt=></div>
+                    <div class="menu-title">王芮《龙王》</div>
+                </a>
+            </div>
+
+<div class="menu-item">
+                <a href="作品/王芮_仙女/换装.html" class="menu-link">
+                    <div class="menu-img"><img src="images/王芮_仙女.png" alt=></div>
+                    <div class="menu-title">王芮《仙女》</div>
+                </a>
+            </div>
+
+
+<div class="menu-item">
+                <a href="作品/朱宛瑜_黑熊精/换装.html" class="menu-link">
+                    <div class="menu-img"><img src="images/朱宛瑜_黑熊精.png" alt=></div>
+                    <div class="menu-title">朱宛瑜《黑熊精》</div>
+                </a>
+            </div>
+
+
+<div class="menu-item">
+                <a href="作品/朱宛瑜_猴王/换装.html" class="menu-link">
+                    <div class="menu-img"><img src="images/朱宛瑜_猴王.png" alt=></div>
+                    <div class="menu-title">朱宛瑜《猴王》</div>
+                </a>
+            </div>
+
+
+<div class="menu-item">
+                <a href="作品/朱宛瑜_龙王/换装.html" class="menu-link">
+                    <div class="menu-img"><img src="images/朱宛瑜_龙王.png" alt=></div>
+                    <div class="menu-title">朱宛瑜《龙王》</div>
+                </a>
+            </div>
+
+<div class="menu-item">
+                <a href="作品/朱宛瑜_铁扇/换装.html" class="menu-link">
+                    <div class="menu-img"><img src="images/朱宛瑜_铁扇.png" alt=></div>
+                    <div class="menu-title">朱宛瑜《铁扇》</div>
+                </a>
+            </div>
+
+
+
+
+
+<!--
+            <div class="menu-item">
+                <a href="作品/张灏璟_白骨精/换装.html" class="menu-link">
+                    <div class="menu-img"><img src="images/张灏璟_白骨精.png" alt=></div>
+                    <div class="menu-title">张灏璟《白骨精》</div>
+                </a>
+            </div>
+            <div class="menu-item">
+                <a href="作品/张灏璟_黑熊精/换装.html" class="menu-link">
+                    <div class="menu-img"<img src="images/张灏璟_黑熊精.png" alt=></div>
+                    <div class="menu-title">张灏璟《黑熊精》</div>
+                </a>
+            </div>
+            <div class="menu-item">
+                <a href="作品/张灏璟_金角大王/换装.html" class="menu-link">
+                    <div class="menu-img"><img src="images/张灏璟_金角大王.png" alt=></div>
+                    <div class="menu-title">张灏璟《金角大王》</div>
+                </a>
+            </div>
+            <div class="menu-item">
+                <a href="作品/张灏璟_龙王/换装.html" class="menu-link">
+                    <div class="menu-img"><img src="images/张灏璟_龙王.png" alt=></div>
+                    <div class="menu-title">张灏璟《龙王》</div>
+                </a>
+            </div>
+            <div class="menu-item">
+                <a href="作品/张灏璟_孙悟空/换装.html" class="menu-link">
+                    <div class="menu-img"><img src="images/张灏璟_孙悟空.png" alt=></div>
+                    <div class="menu-title">张灏璟《孙悟空》</div>
+                </a>
+            </div>
+            <div class="menu-item">
+                <a href="作品/张灏璟_镇元子/换装.html" class="menu-link">
+                    <div class="menu-img"><img src="images/张灏璟_镇元子.png" alt=></div>
+                    <div class="menu-title">张灏璟《镇元子》</div>
+                </a>
+            </div>
+            <div class="menu-item">
+                <a href="" class="menu-link">
+                    <div class="menu-img"></div>
+                    <div class="menu-title"></div>
+                </a>
+            </div>
+-->
+        </div>
+    </div>
+    
+    <!-- 底部版权信息 -->
+    <footer class="footer">
+        <div class="copyright-img">
+            扶苏艺术空间 - 版权所有
+        </div>
+    </footer>
+</body>
+</html>
